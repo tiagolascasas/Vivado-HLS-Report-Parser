@@ -17,7 +17,13 @@ def main():
 
     report = {}
 
-    root = ET.parse(sys.argv[1]).getroot()
+    try:
+        root = ET.parse(sys.argv[1]).getroot()
+    except OSError:
+        print("Unable to read specified report file \"" + sys.argv[1] + "\", aborting...")
+        return 1
+
+    print(root)
 
     user_assign = root.find('UserAssignments')
     perf_estim = root.find('PerformanceEstimates')

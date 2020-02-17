@@ -1,5 +1,0 @@
-input,optimizations,part,target_clock,estim_clock,lat_worst,lat_avg,lat_best,FF,LUT,BRAM,DSP
-array add,Pipeline and full unroll,xc7vx485t-ffg1157-1,10.00,6.959,512,512,512,513,15429,0,0
-array add,Pipeline and full unroll,xc7vx485t-ffg1157-1,10.00,6.959,512,512,512,513,15429,0,0
-array add,Pipeline and full unroll,xc7vx485t-ffg1157-1,10.00,6.959,512,512,512,513,15429,0,0
-array add,Pipeline and full unroll,xc7vx485t-ffg1157-1,10.00,6.959,512,512,512,513,15429,0,0
