@@ -10,4 +10,4 @@ To test the parser, run:
 
 `python test.py`
 
-An executable that does not require python is also provided for Windows.  
+An executable that does not require python is also provided for Windows. See [releases](https://github.com/tiagolascasas/Vivado-HLS-Report-Parser/releases/tag/1.0).
