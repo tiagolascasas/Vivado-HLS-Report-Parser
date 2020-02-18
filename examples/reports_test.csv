@@ -1,0 +1,3 @@
+input,optimizations,part,target_clock,estim_clock,lat_worst,lat_avg,lat_best,FF,LUT,BRAM,DSP
+array_addition,No directives,xc7z020-clg484-1,10.00,5.806,3073,3073,3073,69,101,0,0
+array_addition,Pipeline factor 2 + full unroll,xc7z020-clg484-1,10.00,5.806,513,513,513,578,15429,0,0

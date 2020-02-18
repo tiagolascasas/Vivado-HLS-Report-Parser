@@ -1,1 +1,0 @@
-python hlsparser.py examples/f1_csynth.xml "array add" "Pipeline and full unroll"

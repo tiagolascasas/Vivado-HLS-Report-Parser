@@ -10,17 +10,17 @@ Usage:
 \tpython hlsparse.py <path to report> <name of input code> <optimizations>
 '''
 
-def main():
-    if len(sys.argv) != 4:
+def main(argv):
+    if len(argv) != 4:
         print(usage)
         return 1
 
     report = {}
 
     try:
-        root = ET.parse(sys.argv[1]).getroot()
+        root = ET.parse(argv[1]).getroot()
     except OSError:
-        print("Unable to read specified report file \"" + sys.argv[1] + "\", aborting...")
+        print("Unable to read specified report file \"" + argv[1] + "\", aborting...")
         return 1
 
     print(root)
@@ -29,8 +29,8 @@ def main():
     perf_estim = root.find('PerformanceEstimates')
     area_estim = root.find('AreaEstimates/Resources')
 
-    report['input'] = sys.argv[2]
-    report['optimizations'] = sys.argv[3]
+    report['input'] = argv[2]
+    report['optimizations'] = argv[3]
 
     report['part'] = user_assign.find('Part').text
     report['target_clock'] = user_assign.find('TargetClockPeriod').text
@@ -57,7 +57,8 @@ def main():
             writer = csv.DictWriter(output, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerow(report)
-    print("Report for \"" + report['input'] + "\" successfully added to reports.csv") 
+    print("Report for \"" + report['input'] + "\" successfully added to reports.csv")
+    return 0
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
