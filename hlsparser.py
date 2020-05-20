@@ -7,7 +7,11 @@ from os import path
 
 usage = '''
 Usage:
-\tpython hlsparse.py <path to report> <name of input code> <optimizations>
+\thlsparser <path to report> <name of input code> <optimizations>
+\t - <path to report>: Relative path to the csynth.xml file (including the file)
+\t                     Alternatively, use -d to assume default location
+\t - <name of the input code>: Benchmark name, with commas if it has spaces
+\t - <optimizations>: Optimizations performed, with commas if it has spaces
 '''
 
 def main(argv):
@@ -16,6 +20,8 @@ def main(argv):
         return 1
 
     report = {}
+    if argv[1] == "-d":
+        argv[1] = "solution1/syn/report/csynth.xml"
 
     try:
         root = ET.parse(argv[1]).getroot()
